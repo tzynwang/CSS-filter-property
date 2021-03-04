@@ -119,13 +119,24 @@
     apply.addEventListener("click", function () {
       let textareaCss = document.querySelector('#css').value;
       changeDogCss.setAttribute("style", textareaCss);
+
+      toTop();
     });
 
     let reset = document.querySelector('#reset');
     reset.addEventListener("click", function () {
       css.value = radioValue;
       changeDogCss.setAttribute("style", radioValue);
+
+      toTop();
     })
+
+    function toTop() {
+      if (window.outerWidth <= 375) {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    }
 
   </script>
 </body>
