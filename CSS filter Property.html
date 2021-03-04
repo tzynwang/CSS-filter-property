@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <title>CSS filter property</title>
+
+  <style>
+    .container {
+      max-width: 720px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <div class="container">
+    <div class="row text-center my-3">
+      <h1>CSS filter Property</h1>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 col-md-8">
+        <img src="https://picsum.photos/id/1025/600/400.jpg" alt="dog image" class="w-100 filter" id="dog">
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center align-items-center form-check">
+        <div>
+          <input class="form-check-input" type="radio" id="none" name="filter-property" value="filter: none;">
+          <label class="form-check-label" for="none">none</label><br>
+
+          <input class="form-check-input" type="radio" id="blur" name="filter-property" value="filter: blur(5px);">
+          <label class="form-check-label" for="blur">blur (px)</label><br>
+
+          <input class="form-check-input" type="radio" id="brightness" name="filter-property"
+            value="filter: brightness(200%);">
+          <label class="form-check-label" for="brightness">brightness (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="contrast" name="filter-property"
+            value="filter: contrast(200%);">
+          <label class="form-check-label" for="contrast">contrast (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="drop-shadow" name="filter-property"
+            value="filter: drop-shadow(8px 8px 10px gray);">
+          <label class="form-check-label" for="drop-shadow">drop-shadow</label><br>
+
+          <input class="form-check-input" type="radio" id="grayscale" name="filter-property"
+            value="filter: grayscale(100%);">
+          <label class="form-check-label" for="grayscale">grayscale (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="hue-rotate" name="filter-property"
+            value="filter: hue-rotate(90deg);">
+          <label class="form-check-label" for="hue-rotate">hue-rotate (deg)</label><br>
+
+          <input class="form-check-input" type="radio" id="invert" name="filter-property" value="filter: invert(100%);">
+          <label class="form-check-label" for="invert">invert (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="opacity" name="filter-property"
+            value="filter: opacity(70%);">
+          <label class="form-check-label" for="opacity">opacity (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="saturate" name="filter-property"
+            value="filter: saturate(7);">
+          <label class="form-check-label" for="saturate">saturate (%)</label><br>
+
+          <input class="form-check-input" type="radio" id="sepia" name="filter-property" value="filter: sepia(100%);">
+          <label class="form-check-label" for="sepia">sepia (%)</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex flex-column mb-3">
+        <label for="css" class="form-label">CSS:</label>
+        <textarea name="css" id="css" cols="30" rows="5"></textarea>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <button class="btn btn-primary w-100" id="apply">Apply</button>
+      </div>
+      <div class="col-12 col-md-6 mb-2">
+        <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    /* 
+    1. if a radio button is selected
+    2. read radio button's value
+    3. <textarea> display the CSS property
+    4. apply <textarea> CSS property to <img>
+    5. reset <textarea> CSS property to default by clicking "reset" button
+    */
+
+    let radioValue;
+    let radios = document.getElementsByName('filter-property');
+    let changeDogCss = document.querySelector("#dog");
+    let css = document.querySelector('#css');
+
+    for (let i = 0, length = radios.length; i < length; i++) {
+      radios[i].addEventListener("click", function () {
+        if (radios[i].checked) {
+          radioValue = radios[i].value;
+          css.value = radioValue;
+          changeDogCss.setAttribute("style", radioValue);
+        }
+      });
+    }
+
+    let apply = document.querySelector('#apply');
+    apply.addEventListener("click", function () {
+      let textareaCss = document.querySelector('#css').value;
+      changeDogCss.setAttribute("style", textareaCss);
+    });
+
+    let reset = document.querySelector('#reset');
+    reset.addEventListener("click", function () {
+      css.value = radioValue;
+      changeDogCss.setAttribute("style", radioValue);
+    })
+
+  </script>
+</body>
+
+</html>
