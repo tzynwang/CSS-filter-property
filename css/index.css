@@ -1,0 +1,30 @@
+main {
+  min-height: calc(100vh - 32px);
+}
+
+.container {
+  max-width: 720px;
+}
+
+.description .col {
+  display: none;
+}
+
+#toTopMobile {
+  display: block;
+}
+
+a+a::before {
+  content: " ‧ ";
+}
+
+@media screen and (min-width: 415px) and (min-height: 415px) {
+  #toTopMobile {
+    display: none;
+  }
+}
+
+input[type="checkbox"]:checked~* {
+  background: #343a40;
+  color: #f8f9fa;
+}
