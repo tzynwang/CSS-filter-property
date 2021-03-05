@@ -30,7 +30,7 @@
     </div>
     <div class="row mb-3">
       <div class="col-12 col-md-8">
-        <img src="https://picsum.photos/id/1025/600/400.jpg" alt="dog image" class="w-100 filter" id="dog">
+        <img src="https://picsum.photos/id/1025/600/400.jpg" alt="dog image" class="w-100 rounded-2" id="dog">
       </div>
       <div class="col-12 col-md-4 d-flex justify-content-center align-items-center mt-2 mt-md-0 form-check">
         <div>
@@ -112,6 +112,7 @@
           css.value = radioValue;
           changeDogCss.setAttribute("style", radioValue);
         }
+        toTop();
       });
     }
 
@@ -132,7 +133,7 @@
     })
 
     function toTop() {
-      if (window.outerWidth <= 375) {
+      if (window.outerWidth <= 375 || window.outerHeight <= 414) {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
