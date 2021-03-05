@@ -22,8 +22,18 @@
       display: none;
     }
 
+    #toTopMobile {
+      display: block;
+    }
+
     a+a::before {
       content: " ‧ ";
+    }
+
+    @media screen and (min-width: 415px) and (min-height: 415px) {
+      #toTopMobile {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -257,6 +267,9 @@
           <p>Default value when omitted is <code>1</code>.</p>
         </div>
       </div>
+      <div class="row">
+        <button type="button" class="btn btn-link" id="toTopMobile">BACK TO TOP</button>
+      </div>
     </div>
   </main>
 
@@ -320,6 +333,12 @@
       changeDogCss.setAttribute("style", radioValue);
 
       toTop();
+    })
+
+    let toTopMobile = document.getElementById('toTopMobile');
+    toTopMobile.addEventListener("click", function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     })
 
     function toTop() {
