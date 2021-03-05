@@ -102,8 +102,8 @@
 
     let radioValue;
     let radios = document.getElementsByName('filter-property');
-    let changeDogCss = document.querySelector("#dog");
-    let css = document.querySelector('#css');
+    let changeDogCss = document.getElementById("dog");
+    let css = document.getElementById('css');
 
     for (let i = 0, length = radios.length; i < length; i++) {
       radios[i].addEventListener("click", function () {
@@ -116,15 +116,15 @@
       });
     }
 
-    let apply = document.querySelector('#apply');
+    let apply = document.getElementById('apply');
     apply.addEventListener("click", function () {
-      let textareaCss = document.querySelector('#css').value;
+      let textareaCss = document.getElementById('css').value;
       changeDogCss.setAttribute("style", textareaCss);
 
       toTop();
     });
 
-    let reset = document.querySelector('#reset');
+    let reset = document.getElementById('reset');
     reset.addEventListener("click", function () {
       css.value = radioValue;
       changeDogCss.setAttribute("style", radioValue);
