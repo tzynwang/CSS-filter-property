@@ -46,10 +46,10 @@
       </div>
       <div class="row mb-3">
         <div class="col-12 col-md-8">
-          <img src="images/cat.jpg" alt="cat image" class="w-100 rounded-2" id="dog">
+          <img src="images/cat.jpg" alt="cat image" class="w-100 rounded-2" id="cat">
         </div>
-        <div
-          class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center mt-2 mt-md-0 form-check">
+        <div class=" col-12 col-md-4 d-flex flex-column justify-content-center align-items-center mt-2 mt-md-0
+            form-check">
           <div>
             <p>1. Select a property:</p>
           </div>
@@ -294,7 +294,7 @@
   <script>
     let radioValue;
     let radios = document.getElementsByName('filter-property');
-    let changeDogCss = document.getElementById("dog");
+    let changeCatCss = document.getElementById("cat");
     let css = document.getElementById('css');
     let descriptions = document.querySelectorAll(".description .col");
 
@@ -303,7 +303,7 @@
         if (radios[i].checked) {
           radioValue = radios[i].value;
           css.value = radioValue;
-          changeDogCss.setAttribute("style", radioValue);
+          changeCatCss.setAttribute("style", radioValue);
 
           for (let j = 0; j < descriptions.length; j++) {
             if (i - 1 === j) {
@@ -322,7 +322,7 @@
     let apply = document.getElementById('apply');
     apply.addEventListener("click", function () {
       let textareaCss = document.getElementById('css').value;
-      changeDogCss.setAttribute("style", textareaCss);
+      changeCatCss.setAttribute("style", textareaCss);
 
       toTop();
     });
@@ -330,7 +330,7 @@
     let reset = document.getElementById('reset');
     reset.addEventListener("click", function () {
       css.value = radioValue;
-      changeDogCss.setAttribute("style", radioValue);
+      changeCatCss.setAttribute("style", radioValue);
 
       toTop();
     })
