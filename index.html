@@ -67,7 +67,7 @@
             <label class="form-check-label" for="opacity">opacity (%)</label><br>
 
             <input class="form-check-input" type="radio" id="saturate" name="filter-property"
-              value="filter: saturate(7);">
+              value="filter: saturate(700%);">
             <label class="form-check-label" for="saturate">saturate (%)</label><br>
 
             <input class="form-check-input" type="radio" id="sepia" name="filter-property" value="filter: sepia(100%);">
@@ -85,6 +85,163 @@
         </div>
         <div class="col-12 col-md-6 mb-2">
           <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
+        </div>
+      </div>
+      <div class="row row-cols-1">
+        <div class="col">
+          <h2>blur</h2>
+          <p>
+            Applies a Gaussian blur to the input image. The passed parameter defines the value of the standard deviation
+            to the Gaussian function.
+          </p>
+          <p>The parameter is specified a CSS length (unit: <code>px</code>), but does not accept percentage values.</p>
+          <p>Negative values are not allowed.</p>
+          <p>值一定要加上單位<code>px</code>，值越大越模糊。</p>
+          <p>Default value when omitted is <code>0px</code>.</p>
+        </div>
+        <div class="col">
+          <h2>brightness</h2>
+          <p>Applies a linear multiplier to input image, making it appear more or less bright.</p>
+          <p>A value of <code>0%</code> will create an image
+            that is completely black. A value of <code>100%</code> leaves the input unchanged. Other values are linear
+            multipliers
+            on the effect.
+            Values of amount over <code>100%</code> are allowed, providing brighter results.</p>
+          <p>值為<code>0%</code>影像會全黑，<code>100%</code>維持影像原本的亮度，超過<code>100%</code>後開始提高影像亮度。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>、<code>2</code>等同<code>200%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>contrast</h2>
+          <p>Adjusts the contrast of the input.</p>
+          <p>A value of <code>0%</code> will create an image that is completely gray. A value of <code>100%</code>
+            leaves the input unchanged. Values of amount
+            over <code>100%</code> are allowed, providing results with more contrast.</p>
+          <p>值為<code>0%</code>影像會呈現全灰（毫無對比），<code>100%</code>維持影像原本的對比度，超過<code>100%</code>後開始提高影像對比度。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>、<code>2</code>等同<code>200%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>drop-shadow</h2>
+          <p>Applies a drop shadow effect to the input image. A drop shadow is effectively a blurred, offset version of
+            the input
+            image’s alpha mask drawn in a particular color, composited below the image.</p>
+          <p>Values are interpreted as for <code>box-shadow</code> but with the optional 3rd
+            <code>&lt;length&gt;</code> value being the standard deviation
+            instead of blur radius.
+          </p>
+          <p>四個值依序為：陰影X軸偏移距離（正整數往右、負整數往左）、陰影Y軸偏移距離（正整數往下、負整數往上）、陰影模糊（blur）程度、陰影顏色。</p>
+          <p>陰影模糊（blur）程度沒有註明的話，等同呈現0px（無模糊）的陰影。</p>
+          <p>陰影顏色支援關鍵字、hex、rgba、hsla。沒有註明的話，引用<code>currentColor</code>的值。</p>
+          <p>The keyword <code>currentcolor</code> represents value of the color property on the same element. Its used
+            values is determined by
+            resolving color values.</p>
+          <p>The default value for omitted values is missing length values set to <code>0</code> and the missing used
+            color is taken
+            from the
+            color property.</p>
+        </div>
+        <div class="col">
+          <h2>grayscale</h2>
+          <p>Converts the input image to grayscale. The passed parameter defines the proportion of the conversion.</p>
+          <p>A value of <code>100%</code> is completely grayscale. A value of <code>0%</code> leaves the input
+            unchanged. Values between <code>0%</code> and <code>100%</code> are linear
+            multipliers on the effect. Values of amount over <code>100%</code> are allowed but UAs must clamp the values
+            to <code>1</code>.</p>
+          <p>值為<code>100%</code>時影像會完全灰階化，<code>0%</code>則維持影像原本的彩度，值可以超過<code>100%</code>，但結果與輸入<code>100%</code>相同。
+          </p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>hue-rotate</h2>
+          <p>Applies a hue rotation on the input image. The passed parameter defines the number of degrees around the
+            color circle
+            the input samples will be adjusted.</p>
+          <p>
+            值可以超過<code>360deg</code>，超出的值請想像色環轉了一圈繼續轉。比如輸入<code>450deg</code>的話，呈現的結果會與輸入<code>90deg</code>一樣，因為450-360=90。同理如果輸入負整數的值，就是讓色環逆時針旋轉。
+          </p>
+          <p>A value of <code>0deg</code> leaves the input unchanged. Implementations must not normalize this value in
+            order to allow animations
+            beyond .</p>
+          <p>The unit identifier may be omitted if the <code>&lt;angle&gt;</code> is zero.</p>
+          <p>Default value when omitted is <code>0deg</code>.</p>
+        </div>
+        <div class="col">
+          <h2>invert</h2>
+          <p>Inverts the samples in the input image. The passed parameter defines the proportion of the conversion.</p>
+          <p>A value of <code>100%</code> is completely inverted. A value of <code>0%</code> leaves the input unchanged.
+            Values between <code>0%</code> and
+            <code>100%</code> are linear
+            multipliers on the effect. Values of amount over <code>100%</code> are allowed but UAs must clamp the values
+            to <code>1</code>.
+          </p>
+          <p>值<code>100%</code>會讓影像完全負片，<code>50%</code>讓影像完全失去對比，<code>0%</code>則讓影像保持原狀。</p>
+          <p>值可以超過<code>100%</code>，但結果與輸入<code>100%</code>相同。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>opacity</h2>
+          <p>Applies transparency to the samples in the input image. The passed parameter defines the proportion of the
+            conversion.</p>
+          <p>A value of <code>0%</code> is completely transparent. A value of <code>100%</code> leaves the input
+            unchanged. Values between <code>0%</code> and
+            <code>100%</code> are
+            linear multipliers on the effect. This is equivalent to multiplying the input image samples by amount.
+            Values of amount
+            over <code>100%</code> are allowed but UAs must clamp the values to <code>1</code>.
+          </p>
+          <p>值為<code>0%</code>時會讓影像呈現完全透明，<code>100%</code>則讓影像保持原狀。</p>
+          <p>值可以超過<code>100%</code>，但結果與輸入<code>100%</code>相同。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>saturate</h2>
+          <p>Saturates the input image. The passed parameter defines the proportion of the conversion.</p>
+          <p>A value of <code>0%</code> is completely un-saturated. A value of <code>100%</code> leaves the input
+            unchanged. Other values are
+            linear
+            multipliers on the effect. Values of amount over <code>100%</code> are allowed, providing super-saturated
+            results.</p>
+          <p>值為<code>0%</code>時會讓影像的飽和度歸零，<code>100%</code>則讓影像保持原狀。</p>
+          <p>值可以超過<code>100%</code>，超過<code>100%</code>代表繼續增加影像的飽和度。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>、<code>2</code>等同<code>200%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
+        </div>
+        <div class="col">
+          <h2>sepia</h2>
+          <p>Converts the input image to sepia. The passed parameter defines the proportion of the conversion.</p>
+          <p>A value of <code>100%</code> is completely sepia. A value of <code>0%</code> leaves the input unchanged.
+            Values between <code>0%</code> and <code>100%</code> are linear
+            multipliers on the effect. Values of amount over <code>100%</code> are allowed but UAs must clamp the values
+            to <code>1</code>.</p>
+          <p>設定影像的懷舊濾鏡，值為<code>100%</code>代表濾鏡程度開到最大，<code>0%</code>則讓影像保持原狀。</p>
+          <p>值可以超過<code>100%</code>，但結果與輸入<code>100%</code>相同。</p>
+          <p>
+            除了百分比以外，也接受正數作為值。輸入<code>0.5</code>等同<code>50%</code>、<code>1</code>等同<code>100%</code>。
+          </p>
+          <p>Negative values are not allowed.</p>
+          <p>Default value when omitted is <code>1</code>.</p>
         </div>
       </div>
     </div>
