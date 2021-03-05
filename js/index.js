@@ -53,3 +53,17 @@ function toTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 }
+
+// dark mode
+let dark = document.getElementById("dark");
+dark.addEventListener("click", function () {
+  document.body.classList.toggle("dark");
+
+  document.getElementById("css").classList.toggle("dark");
+  document.getElementById("footer").classList.toggle("dark-footer");
+
+  let codes = document.getElementsByTagName("code");
+  for (let i = 0; i < codes.length; i++) {
+    codes[i].classList.toggle("code");
+  }
+})
