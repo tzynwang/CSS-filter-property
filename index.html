@@ -12,6 +12,10 @@
   <title>CSS filter property</title>
 
   <style>
+    main {
+      min-height: calc(100vh - 32px);
+    }
+
     .container {
       max-width: 720px;
     }
@@ -23,80 +27,82 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
-
-  <div class="container">
-    <div class="row text-center my-3">
-      <h1>CSS filter Property</h1>
-    </div>
-    <div class="row mb-3">
-      <div class="col-12 col-md-8">
-        <img src="https://picsum.photos/id/1025/600/400.jpg" alt="dog image" class="w-100 rounded-2" id="dog">
+  <main>
+    <div class="container">
+      <div class="row text-center my-3">
+        <h1>CSS filter Property</h1>
       </div>
-      <div class="col-12 col-md-4 d-flex justify-content-center align-items-center mt-2 mt-md-0 form-check">
-        <div>
-          <input class="form-check-input" type="radio" id="none" name="filter-property" value="filter: none;">
-          <label class="form-check-label" for="none">none</label><br>
+      <div class="row mb-3">
+        <div class="col-12 col-md-8">
+          <img src="https://picsum.photos/id/1025/600/400.jpg" alt="dog image" class="w-100 rounded-2" id="dog">
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center mt-2 mt-md-0 form-check">
+          <div>
+            <input class="form-check-input" type="radio" id="none" name="filter-property" value="filter: none;">
+            <label class="form-check-label" for="none">none</label><br>
 
-          <input class="form-check-input" type="radio" id="blur" name="filter-property" value="filter: blur(5px);">
-          <label class="form-check-label" for="blur">blur (px)</label><br>
+            <input class="form-check-input" type="radio" id="blur" name="filter-property" value="filter: blur(5px);">
+            <label class="form-check-label" for="blur">blur (px)</label><br>
 
-          <input class="form-check-input" type="radio" id="brightness" name="filter-property"
-            value="filter: brightness(200%);">
-          <label class="form-check-label" for="brightness">brightness (%)</label><br>
+            <input class="form-check-input" type="radio" id="brightness" name="filter-property"
+              value="filter: brightness(200%);">
+            <label class="form-check-label" for="brightness">brightness (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="contrast" name="filter-property"
-            value="filter: contrast(200%);">
-          <label class="form-check-label" for="contrast">contrast (%)</label><br>
+            <input class="form-check-input" type="radio" id="contrast" name="filter-property"
+              value="filter: contrast(200%);">
+            <label class="form-check-label" for="contrast">contrast (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="drop-shadow" name="filter-property"
-            value="filter: drop-shadow(8px 8px 10px gray);">
-          <label class="form-check-label" for="drop-shadow">drop-shadow</label><br>
+            <input class="form-check-input" type="radio" id="drop-shadow" name="filter-property"
+              value="filter: drop-shadow(8px 8px 10px gray);">
+            <label class="form-check-label" for="drop-shadow">drop-shadow</label><br>
 
-          <input class="form-check-input" type="radio" id="grayscale" name="filter-property"
-            value="filter: grayscale(100%);">
-          <label class="form-check-label" for="grayscale">grayscale (%)</label><br>
+            <input class="form-check-input" type="radio" id="grayscale" name="filter-property"
+              value="filter: grayscale(100%);">
+            <label class="form-check-label" for="grayscale">grayscale (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="hue-rotate" name="filter-property"
-            value="filter: hue-rotate(90deg);">
-          <label class="form-check-label" for="hue-rotate">hue-rotate (deg)</label><br>
+            <input class="form-check-input" type="radio" id="hue-rotate" name="filter-property"
+              value="filter: hue-rotate(90deg);">
+            <label class="form-check-label" for="hue-rotate">hue-rotate (deg)</label><br>
 
-          <input class="form-check-input" type="radio" id="invert" name="filter-property" value="filter: invert(100%);">
-          <label class="form-check-label" for="invert">invert (%)</label><br>
+            <input class="form-check-input" type="radio" id="invert" name="filter-property"
+              value="filter: invert(100%);">
+            <label class="form-check-label" for="invert">invert (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="opacity" name="filter-property"
-            value="filter: opacity(70%);">
-          <label class="form-check-label" for="opacity">opacity (%)</label><br>
+            <input class="form-check-input" type="radio" id="opacity" name="filter-property"
+              value="filter: opacity(70%);">
+            <label class="form-check-label" for="opacity">opacity (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="saturate" name="filter-property"
-            value="filter: saturate(7);">
-          <label class="form-check-label" for="saturate">saturate (%)</label><br>
+            <input class="form-check-input" type="radio" id="saturate" name="filter-property"
+              value="filter: saturate(7);">
+            <label class="form-check-label" for="saturate">saturate (%)</label><br>
 
-          <input class="form-check-input" type="radio" id="sepia" name="filter-property" value="filter: sepia(100%);">
-          <label class="form-check-label" for="sepia">sepia (%)</label>
+            <input class="form-check-input" type="radio" id="sepia" name="filter-property" value="filter: sepia(100%);">
+            <label class="form-check-label" for="sepia">sepia (%)</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex flex-column mb-3">
+          <label for="css" class="form-label">CSS:</label>
+          <input class="form-control" id="css" type="text">
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+          <button class="btn btn-primary w-100" id="apply">Apply</button>
+        </div>
+        <div class="col-12 col-md-6 mb-2">
+          <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 d-flex flex-column mb-3">
-        <label for="css" class="form-label">CSS:</label>
-        <input class="form-control" id="css" type="text">
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <button class="btn btn-primary w-100" id="apply">Apply</button>
-      </div>
-      <div class="col-12 col-md-6 mb-2">
-        <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
-      </div>
-    </div>
-  </div>
+  </main>
+
   <footer>
-    <div class="container-fluid">
-      <div class="row mt-3 bg-secondary text-light text-center">
-        <p class="my-auto py-1">© 2021 Charlie（茶）</p>
+    <div class="container-fluid bg-secondary text-light text-center">
+      <div class="row">
+        <p class="my-auto py-1 small">Copyright 2021 Charlie（茶）</p>
       </div>
     </div>
   </footer>
-
 
   <script>
 
