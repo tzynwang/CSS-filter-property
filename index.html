@@ -17,6 +17,10 @@
     .container {
       max-width: 720px;
     }
+
+    .description .col {
+      display: none;
+    }
   </style>
 </head>
 
@@ -87,7 +91,7 @@
           <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
         </div>
       </div>
-      <div class="row row-cols-1">
+      <div class="row row-cols-1 description">
         <div class="col">
           <h2>blur</h2>
           <p>
@@ -260,6 +264,7 @@
     let radios = document.getElementsByName('filter-property');
     let changeDogCss = document.getElementById("dog");
     let css = document.getElementById('css');
+    let descriptions = document.querySelectorAll(".description .col");
 
     for (let i = 0, length = radios.length; i < length; i++) {
       radios[i].addEventListener("click", function () {
@@ -267,6 +272,16 @@
           radioValue = radios[i].value;
           css.value = radioValue;
           changeDogCss.setAttribute("style", radioValue);
+
+          for (let j = 0; j < descriptions.length; j++) {
+            if (i - 1 === j) {
+              descriptions[j].setAttribute("style", "display: block;");
+            }
+            else {
+              descriptions[j].setAttribute("style", "display: none;");
+            }
+          }
+
         }
         toTop();
       });
