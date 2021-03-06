@@ -26,10 +26,6 @@ a+a::before {
 
 /* for dark mode */
 
-#labelContainer {
-  position: relative;
-}
-
 #dark {
   position: fixed;
   top: -16px;
@@ -47,7 +43,7 @@ a+a::before {
   display: flex;
   align-items: center;
   transition: all .5s ease 0s;
-  filter: drop-shadow(0 2px 4px #6c757d);
+  filter: drop-shadow(0 2px 2px #6c757d);
 }
 
 #darkLabel svg {
@@ -74,10 +70,10 @@ a+a::before {
 @media screen and (min-width: 415px) {
   #darkLabel {
     position: absolute;
-    top: 2px;
-    right: 1rem;
-    border-radius: 0.25rem;
-    filter: drop-shadow(0 0 0 #6c757d);
+    top: 0;
+    right: max(1rem, calc((100vw - 720px)/2));
+    border-radius: 0 0 0.25rem 0.25rem;
+    filter: drop-shadow(0 0 2px #6c757d);
   }
 }
 
