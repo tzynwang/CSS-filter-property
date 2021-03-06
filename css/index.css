@@ -73,7 +73,6 @@ a+a::before {
     top: 0;
     right: max(1rem, calc((100vw - 720px)/2));
     border-radius: 0 0 0.25rem 0.25rem;
-    filter: drop-shadow(0 0 2px #6c757d);
   }
 }
 
