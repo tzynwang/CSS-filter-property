@@ -1,5 +1,6 @@
 main {
-  min-height: calc(100vh - 32px);
+  min-height: calc(100vh - 37px);
+  overflow: hidden; /* auto can work too */
 }
 
 .container {
@@ -25,9 +26,10 @@ footer a::after {
 }
 
 /* for dark mode */
+
 #dark {
   position: fixed;
-  top: -16px;
+  top: -32px;
 }
 
 #darkLabel {
@@ -93,9 +95,10 @@ footer a::after {
 }
 
 /* for home-credit toggle */
+
 #homeCreditToggle {
   position: fixed;
-  top: -16px;
+  top: -32px;
 }
 
 #homeCreditToggleLabel {
