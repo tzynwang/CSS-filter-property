@@ -66,4 +66,15 @@ dark.addEventListener("click", function () {
   for (let i = 0; i < codes.length; i++) {
     codes[i].classList.toggle("code");
   }
-})
+});
+
+// home-credit toggle
+let toggle = document.getElementById("homeCreditToggle");
+toggle.addEventListener("click", function () {
+  let labelText = document.getElementById("homeCreditToggleLabel").innerHTML;
+  if (labelText === "Credit") {
+    document.getElementById("homeCreditToggleLabel").innerHTML = "Home";
+  } else {
+    document.getElementById("homeCreditToggleLabel").innerHTML = "Credit";
+  }
+});

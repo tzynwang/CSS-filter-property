@@ -14,7 +14,7 @@ main {
   display: block;
 }
 
-a+a::before {
+footer a::after {
   content: " ‧ ";
 }
 
@@ -25,7 +25,6 @@ a+a::before {
 }
 
 /* for dark mode */
-
 #dark {
   position: fixed;
   top: -16px;
@@ -91,4 +90,31 @@ a+a::before {
 
 .code {
   color: #ffb5da;
+}
+
+/* for home-credit toggle */
+#homeCreditToggle {
+  position: fixed;
+  top: -16px;
+}
+
+#homeCreditToggleLabel {
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+#homeCreditToggleLabel:hover {
+  color: #0a58ca;
+}
+
+.credit-info {
+  display: none;
+}
+
+#homeCreditToggle:checked~div {
+  display: none;
+}
+
+#homeCreditToggle:checked~div.credit-info {
+  display: block;
 }
