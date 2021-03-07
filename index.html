@@ -19,6 +19,7 @@
 
 <body>
   <main>
+    <!-- Dark-mode toggle -->
     <div class="container">
       <input type="checkbox" id="dark">
       <label for="dark" id="darkLabel">
@@ -28,10 +29,15 @@
         </svg>
       </label>
     </div>
+
     <div class="container">
+      <input type="checkbox" id="homeCreditToggle">
+      <!-- Title -->
       <div class="row text-center my-3">
         <h1>CSS <code>filter</code> Property</h1>
       </div>
+
+      <!-- Deme image and property options -->
       <div class="row mb-3">
         <div class="col-12 col-md-8">
           <img src="images/cat.jpg" alt="cat image" class="w-100 rounded-2" id="cat">
@@ -85,6 +91,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Manual edit section -->
       <div class="row">
         <div class="col-12 d-flex flex-column mb-3">
           <label for="css" class="form-label">2. Modify <code>filter</code>'s value, and click "Apply" to see the
@@ -98,6 +106,8 @@
           <button class="btn btn-outline-secondary w-100" id="reset">Reset</button>
         </div>
       </div>
+
+      <!-- Property's description -->
       <div class="row row-cols-1 description">
         <div class="col">
           <div class="d-flex align-items-center">
@@ -370,14 +380,31 @@
           <p>Default value when omitted is <code>1</code>.</p>
         </div>
       </div>
+      
+      <!-- Back to top button -->
       <div class="row">
         <button type="button" class="btn text-primary" id="toTopMobile">BACK TO TOP</button>
+      </div>
+
+      <!-- Credit information -->
+      <div class="credit-info">
+        <div class="row text-center my-3">
+          <h1>Credit</h1>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h2>demo image</h2>
+            <p><a href="https://www.pexels.com/photo/yellow-and-white-cat-57416/">Yellow and White Cat</a> by Pixabay</p>
+            <h2>favicon</h2>
+            <p>Emoji: Cat Face from <a href="https://favicon.io/emoji-favicons/cat-face/">Favicon.io</a></p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="container-fluid bg-light text-dark text-center small" id="footer">
+  <footer class="container-fluid bg-light text-dark text-center small" id="footer">
+    <div class="container">
       <div class="row flex-column flex-md-row">
         <div class="col">
           <p class="my-auto py-1">Copyright 2021 Charlie（茶）</p>
@@ -387,7 +414,7 @@
             class="text-decoration-none">GitHub</a>
           <a href="https://tzynwang.github.io/" target="_blank" class="text-decoration-none">Blog</a>
           <a href="https://www.facebook.com/tzynwang7779/" target="_blank" class="text-decoration-none">Facebook</a>
-          <a href="https://tzynwang.github.io/CSS-filter-property/credit.html" class="text-decoration-none">Credit</a>
+          <label for="homeCreditToggle" id="homeCreditToggleLabel">Credit</label>
         </div>
       </div>
     </div>
